@@ -1,6 +1,13 @@
 #!/bin/sh
 # Definimos la ruta donde se instalaron los archivos
+VERSION=1.3
 RUTA_APP="${PREFIX:-/usr}/share/nubesky"
+
+
+if [ "$1" = "--version" ] || [ "$1" = "-v" ]; then
+  echo "NubeSky version $VERSION"
+  exit 0
+fi
 
 # Intentamos entrar a la carpeta, si falla, salimos
 cd "$RUTA_APP" || { echo "❌ Error: No se encuentra la carpeta de la app"; }

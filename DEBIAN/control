@@ -1,0 +1,7 @@
+Package: nubesky
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: FSkyCode fskycode@gmail.com
+Description: Servidor y gestor de notas en la nube, in the sky.

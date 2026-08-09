@@ -1,6 +1,16 @@
 #!/bin/sh
+# Definimos la ruta donde se instalaron los archivos
 RUTA_APP="${PREFIX:-/usr}/share/nubesky"
 
-cd "$RUTA_APP"
-echo "🌠Arrancando NubeSky…"
-node servidorSky.sh
+# Intentamos entrar a la carpeta, si falla, salimos
+cd "$RUTA_APP" || { echo "❌ Error: No se encuentra la carpeta de la app"; }
+
+echo "🌠 Arrancando NubeSky..."
+
+# Verificamos si existe el archivo antes de ejecutarlo
+if [ -f "servidorSky.sh" ]; then
+    node servidorSky.sh
+else
+    echo "❌ Error: No se encontró el archivo servidorSky.sh en $RUTA_APP"
+fi
+

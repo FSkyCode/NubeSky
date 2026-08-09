@@ -3,4 +3,4 @@ RUTA_APP="${PREFIX:-/usr}/share/nubesky"
 
 cd "$RUTA_APP"
 echo "🌠Arrancando NubeSky…"
-node servidorSky.js
+node servidorSky.sh

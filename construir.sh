@@ -11,7 +11,7 @@ chmod 644 "$BUILD_DIR/DEBIAN/control"
 chmod -R 755 "$BUILD_DIR/usr"
 
 echo " 2. Compilando nuevo paquete..."
-dpkg-deb --build "$BUILD_DIR" "$NOMBRE_DEB"
+dpkg-deb --root-owner-group --build "$BUILD_DIR" "$NOMBRE_DEB"
 
 # Si dpkg-deb falla, se detiene el script de inmediato
 if [ $? -ne 0 ]; then
@@ -25,6 +25,7 @@ mv "$NOMBRE_DEB" "$REPO_DIR/$NOMBRE_DEB"
 
 # Entramos a repo, generamos el índice y regresamos
 cd "$REPO_DIR" || exit 1
+
 dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
 cd ..
 

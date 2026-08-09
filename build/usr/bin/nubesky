@@ -1,6 +1,6 @@
 #!/bin/sh
 # Definimos la ruta donde se instalaron los archivos
-VERSION=1.3
+VERSION=1.4
 RUTA_APP="${PREFIX:-/usr}/share/nubesky"
 
 

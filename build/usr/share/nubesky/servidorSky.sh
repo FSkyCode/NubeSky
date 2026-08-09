@@ -15,7 +15,7 @@ async function connectDB() {
         await client.connect();
         db = client.db('SystemSkyDB'); // Nombre de la base de datos
         notasCollection = db.collection('notas'); // Nombre de la colección
-        console.log("🌌 [SystemSky] ¡Conectado exitosamente a MongoDB Atlas en la nube!");
+        console.log("🌠 [SystemSky] ¡Conectado exitosamente a MongoDB Atlas en la nube!");
     } catch (err) {
         console.error("❌ Error conectando a MongoDB:", err);
         process.exit(1);
@@ -80,10 +80,10 @@ app.get('/', async (req, res) => {
                 </style>
             </head>
             <body>
-                <h1>🌌 SystemSky</h1>
+                <h1>🌠 NubeSky</h1>
                 <h3>Crear o Editar Nota</h3>
                 <form action="/guardar" method="POST">
-                    <input type="text" name="carpeta" placeholder="Carpeta (Ej: Quimica, Godot, Personal)">
+                    <input type="text" name="carpeta" placeholder="Carpeta (Ej: Quimica, Proyecto1/s, Personal)">
                     <input type="text" name="titulo" placeholder="Título de la nota" required>
                     <textarea name="contenido" placeholder="Escribe tu nota aquí..." required></textarea>
                     <br>
